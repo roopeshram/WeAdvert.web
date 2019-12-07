@@ -105,7 +105,8 @@ namespace WebAdvert.Web.Controllers
                 var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, false).ConfigureAwait(false);
                 if (result.Succeeded)
                 {
-                    return RedirectToAction("Index", "Home");
+                    //return RedirectToAction("Index", "Home");
+                     return RedirectToAction("Create", "AdvertManagement");
                 }
                 {
                     ModelState.AddModelError("login error", "Email and Pwd do not match");
